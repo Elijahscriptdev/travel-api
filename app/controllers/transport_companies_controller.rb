@@ -1,5 +1,4 @@
 class TransportCompaniesController < ApplicationController
-  # skip_before_action :authorize_request
   before_action :set_transport_company, only: [:show, :update, :destroy]
 
   # GET /transport_companies
@@ -47,6 +46,6 @@ class TransportCompaniesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def transport_company_params
-      params.require(:transport_company).permit(:name)
+      params.require(:transport_company).permit(:name, :user_id)
     end
 end

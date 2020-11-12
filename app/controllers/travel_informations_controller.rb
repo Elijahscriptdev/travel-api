@@ -1,5 +1,6 @@
 class TravelInformationsController < ApplicationController
   before_action :set_travel_information, only: [:show, :update, :destroy]
+  skip_before_action :authorize_request, only: :index
 
   # GET /travel_informations
   def index
